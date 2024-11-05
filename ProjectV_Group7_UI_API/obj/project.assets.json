@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\College_Work\\Semester-6\\Project V\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj",
+      "projectUniqueName": "D:\\College_Work\\Semester-6\\Project V\\Code\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj",
       "projectName": "ProjectV_Group7_UI_API",
-      "projectPath": "D:\\College_Work\\Semester-6\\Project V\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj",
+      "projectPath": "D:\\College_Work\\Semester-6\\Project V\\Code\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj",
       "packagesPath": "C:\\Users\\insha\\.nuget\\packages\\",
-      "outputPath": "D:\\College_Work\\Semester-6\\Project V\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API\\obj\\",
+      "outputPath": "D:\\College_Work\\Semester-6\\Project V\\Code\\ProjectV_Group7_UI_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

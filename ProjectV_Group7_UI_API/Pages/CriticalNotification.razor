@@ -1,0 +1,63 @@
+@page "/critical-notification-history"
+@inject CriticalNotificationService CriticalNotificationService
+
+<h2 style="display: inline-block;">Critical Notification History</h2>
+<button class="btn-new-notification" @onclick="CreateNewNotification" style="float: right; margin-left: 20px;">New
+    Notification</button>
+
+<p class="notification-description">View a history of all notifications.</p>
+@* <input type="text" placeholder="Search notifications..." @bind="searchQuery" @oninput="OnSearchChanged" /> *@
+
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Recipient</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Priority</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var notification in filteredNotifications)
+        {
+            <tr>
+                <td>@notification.Date.ToString("MMM d")</td>
+                <td>@notification.Recipient</td>
+                <td>@notification.Type</td>
+                <td>@notification.Status</td>
+                <td>@notification.Priority</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private string searchQuery;
+    private List<Critical_Notification> filteredNotifications;
+
+    protected override void OnInitialized()
+    {
+        filteredNotifications = CriticalNotificationService.GetNotifications();
+    }
+
+    private void OnSearchChanged(ChangeEventArgs e)
+    {
+        searchQuery = e.Value?.ToString();
+        FilterNotifications();
+    }
+
+    private void FilterNotifications()
+    {
+        filteredNotifications = CriticalNotificationService.GetNotifications()
+        .Where(n => n.Type.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
+        .ToList();
+    }
+
+    private void CreateNewNotification()
+    {
+        // Logic for creating a new notification goes here
+        // This could open a modal or redirect to a new page for creating a notification
+        Console.WriteLine("New Notification button clicked!");
+    }
+}

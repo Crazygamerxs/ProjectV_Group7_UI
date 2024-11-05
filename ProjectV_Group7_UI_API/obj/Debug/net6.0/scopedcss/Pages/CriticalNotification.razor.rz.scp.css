@@ -1,0 +1,52 @@
+h2[b-mym6wv0fhf] {
+    color: #444; /* Darker heading color */
+}
+.notification-description[b-mym6wv0fhf] {
+    color: #777; /* Lighter text for the description */
+}
+
+input[type="text"][b-mym6wv0fhf] {
+    padding: 0.5rem; /* Padding for the search input */
+    margin-bottom: 1rem; /* Space below the input */
+    border: 1px solid #ccc; /* Border for the input */
+    border-radius: 4px; /* Rounded corners */
+}
+
+table[b-mym6wv0fhf] {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Merge borders */
+}
+
+th[b-mym6wv0fhf], td[b-mym6wv0fhf] {
+    border: 1px solid #ddd; /* Border for table cells */
+    padding: 8px; /* Padding in cells */
+    text-align: left; /* Left-align text */
+}
+
+th[b-mym6wv0fhf] {
+    background-color: #f2f2f2; /* Header background color */
+}
+
+tr:hover[b-mym6wv0fhf] {
+    background-color: rgba(255, 255, 255, 0.1); /* Hover effect on rows */
+}
+
+.btn-new-notification[b-mym6wv0fhf] {
+    background-color: #e74c3c; /* Reddish color for the button */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 20px; /* Space between heading and button */
+}
+
+.btn-new-notification:hover[b-mym6wv0fhf] {
+    background-color: #c0392b; /* Darker shade on hover */
+}
+
+.search-container[b-mym6wv0fhf] {
+    position: relative;
+    margin-bottom: 1rem; /* Space below the input */
+}
