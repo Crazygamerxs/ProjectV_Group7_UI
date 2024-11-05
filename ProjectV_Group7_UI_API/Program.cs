@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using ProjectV_Group7_UI_API.Data;
+using ProjectV_Group7_UI_API.Pages;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +11,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSingleton<CriticalNotificationService>();
-
+builder.Services.AddSingleton<AddNotificationModal>();
 
 var app = builder.Build();
 

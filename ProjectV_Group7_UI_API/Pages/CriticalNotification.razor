@@ -2,11 +2,10 @@
 @inject CriticalNotificationService CriticalNotificationService
 
 <h2 style="display: inline-block;">Critical Notification History</h2>
-<button class="btn-new-notification" @onclick="CreateNewNotification" style="float: right; margin-left: 20px;">New
+<button class="btn-new-notification" @onclick="ShowAddNotificationModal" style="float: right; margin-left: 20px;">New
     Notification</button>
 
 <p class="notification-description">View a history of all notifications.</p>
-@* <input type="text" placeholder="Search notifications..." @bind="searchQuery" @oninput="OnSearchChanged" /> *@
 
 <table>
     <thead>
@@ -32,32 +31,26 @@
     </tbody>
 </table>
 
+<AddNotificationModal @ref="addNotificationModal" OnClose="HandleModalClose" />
+
 @code {
-    private string searchQuery;
-    private List<Critical_Notification> filteredNotifications;
+    private string searchQuery = string.Empty;
+    private List<Critical_Notification> filteredNotifications = new();
+    private AddNotificationModal addNotificationModal;
 
     protected override void OnInitialized()
     {
         filteredNotifications = CriticalNotificationService.GetNotifications();
     }
 
-    private void OnSearchChanged(ChangeEventArgs e)
+    private void ShowAddNotificationModal()
     {
-        searchQuery = e.Value?.ToString();
-        FilterNotifications();
+        addNotificationModal.Show();
     }
 
-    private void FilterNotifications()
+    private void HandleModalClose()
     {
-        filteredNotifications = CriticalNotificationService.GetNotifications()
-        .Where(n => n.Type.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
-        .ToList();
-    }
-
-    private void CreateNewNotification()
-    {
-        // Logic for creating a new notification goes here
-        // This could open a modal or redirect to a new page for creating a notification
-        Console.WriteLine("New Notification button clicked!");
+        // Reload notifications from the service after closing the modal
+        filteredNotifications = CriticalNotificationService.GetNotifications();
     }
 }

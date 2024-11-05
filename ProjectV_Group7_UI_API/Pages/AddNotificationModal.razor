@@ -1,0 +1,116 @@
+@page "/add-notification"
+@using System.Text.Json
+@inject CriticalNotificationService CriticalNotificationService
+
+@code {
+    private string? notes;
+    private DateTime currentDate = DateTime.Now;
+    private string? selectedRecipient;
+    private string? notificationType;
+    private string? selectedStatus;
+    private string? selectedPriority; // New field for priority
+    private List<string> recipients = new() { "Recipient 1", "Recipient 2", "Recipient 3" };
+    private List<string> statuses = new() { "Pending", "Delivered", "In Progress" }; // Example statuses
+    private List<string> priorities = new() { "Low", "Medium", "High", "Very High" }; // Priority options
+
+    [Parameter] public EventCallback<bool> OnClose { get; set; }
+
+    private bool isVisible = false;
+
+    public void Show()
+    {
+        isVisible = true;
+        StateHasChanged();
+    }
+
+    public void Hide()
+    {
+        isVisible = false;
+        StateHasChanged();
+    }
+
+    private async Task SaveNotification()
+    {
+        // Log the values for debugging
+        Console.WriteLine($"Notes: {notes}, Date: {currentDate}, Recipient: {selectedRecipient}, Type: {notificationType}, Status: {selectedStatus}, Priority: {selectedPriority}");
+
+        var notification = new Critical_Notification
+        {
+            Date = currentDate,
+            Recipient = string.IsNullOrEmpty(selectedRecipient) ? "N/A" : selectedRecipient,
+            Type = string.IsNullOrEmpty(notificationType) ? "N/A" : notificationType,
+            Status = string.IsNullOrEmpty(selectedStatus) ? "N/A" : selectedStatus,
+            Priority = string.IsNullOrEmpty(selectedPriority) ? "N/A" : selectedPriority, // Save the priority
+            Notes = string.IsNullOrEmpty(notes) ? "N/A" : notes
+        };
+
+        // Add the notification to the service
+        CriticalNotificationService.AddNotification(notification);
+
+        await OnClose.InvokeAsync(false);
+        Hide();
+    }
+}
+
+@if (isVisible)
+{
+    <div class="modal fade show" style="display: block;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-light">
+                <div class="modal-header" style="background-color: #e74c3c;">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">Add New Notification</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="notes">Notes</label>
+                            <textarea class="form-control" id="notes" @bind="notes" rows="4" placeholder="Enter your notes here..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date" value="@currentDate.ToString("yyyy-MM-dd")" disabled />
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient">Recipient</label>
+                            <select class="form-control" id="recipient" @bind="selectedRecipient">
+                                <option value="">Select a Recipient</option>
+                                @foreach (var recipient in recipients)
+                                {
+                                    <option value="@recipient">@recipient</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Type</label>
+                            <input type="text" class="form-control" id="type" @bind="notificationType" placeholder="Notification Type" />
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select class="form-control" id="status" @bind="selectedStatus">
+                                <option value="">Select Status</option>
+                                @foreach (var status in statuses)
+                                {
+                                    <option value="@status">@status</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="priority">Priority</label>
+                            <select class="form-control" id="priority" @bind="selectedPriority">
+                                <option value="">Select Priority</option>
+                                @foreach (var priority in priorities)
+                                {
+                                    <option value="@priority">@priority</option>
+                                }
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="() => { Hide(); OnClose.InvokeAsync(false); }">Close</button>
+                    <button type="button" class="btn btn-primary" @onclick="SaveNotification">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

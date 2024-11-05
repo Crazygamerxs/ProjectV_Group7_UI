@@ -62,3 +62,10 @@ D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.
 D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.genruntimeconfig.cache
 D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\ref\ProjectV_Group7_UI_API.dll
 D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\scopedcss\Pages\CriticalNotification.razor.rz.scp.css
+D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\scopedcss\Pages\AddNotificationModal.razor.rz.scp.css
+D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\bin\Debug\net6.0\critical-notifications.json
+D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\bin\Debug\net6.0\System.Text.Json.dll
+D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.csproj.AssemblyReference.cache
+D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV.2B07B520.Up2Date

@@ -1,6 +1,7 @@
 h2[b-mym6wv0fhf] {
     color: #444; /* Darker heading color */
 }
+
 .notification-description[b-mym6wv0fhf] {
     color: #777; /* Lighter text for the description */
 }
@@ -49,4 +50,9 @@ tr:hover[b-mym6wv0fhf] {
 .search-container[b-mym6wv0fhf] {
     position: relative;
     margin-bottom: 1rem; /* Space below the input */
+}
+
+.notes-column[b-mym6wv0fhf] {
+    width: 150px; /* Set a fixed width for the Notes column */
+    word-wrap: break-word; /* Allow long words to break */
 }

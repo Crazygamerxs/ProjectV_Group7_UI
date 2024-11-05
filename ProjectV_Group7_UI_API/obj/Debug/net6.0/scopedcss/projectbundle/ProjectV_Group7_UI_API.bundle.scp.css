@@ -1,7 +1,38 @@
+/* _content/ProjectV_Group7_UI_API/Pages/AddNotificationModal.razor.rz.scp.css */
+.modal-content[b-kje4vdiswf] {
+    border-radius: 0.5rem; /* Rounded corners */
+}
+
+.modal-header[b-kje4vdiswf] {
+    background-color: #e74c3c; /* Red background */
+    border-bottom: 2px solid #e74c3c; /* Border color */
+}
+
+
+.btn-primary[b-kje4vdiswf] {
+    background-color: #e74c3c; /* Red color */
+    border-color: #e74c3c;
+}
+
+.btn-primary:hover[b-kje4vdiswf] {
+    background-color: #c0392b; /* Darker red on hover */
+    border-color: #c0392b;
+}
+
+.btn-secondary[b-kje4vdiswf] {
+    background-color: #6c757d; /* Bootstrap secondary color */
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover[b-kje4vdiswf] {
+    background-color: #5a6268; /* Darker gray on hover */
+    border-color: #545b62;
+}
 /* _content/ProjectV_Group7_UI_API/Pages/CriticalNotification.razor.rz.scp.css */
 h2[b-mym6wv0fhf] {
     color: #444; /* Darker heading color */
 }
+
 .notification-description[b-mym6wv0fhf] {
     color: #777; /* Lighter text for the description */
 }
@@ -50,6 +81,11 @@ tr:hover[b-mym6wv0fhf] {
 .search-container[b-mym6wv0fhf] {
     position: relative;
     margin-bottom: 1rem; /* Space below the input */
+}
+
+.notes-column[b-mym6wv0fhf] {
+    width: 150px; /* Set a fixed width for the Notes column */
+    word-wrap: break-word; /* Allow long words to break */
 }
 /* _content/ProjectV_Group7_UI_API/Shared/MainLayout.razor.rz.scp.css */
 .page[b-apxd5u4c1q] {
