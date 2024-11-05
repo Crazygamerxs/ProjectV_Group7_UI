@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ProjectV_Group7_UI_API/1.0.0": {
+        "runtime": {
+          "ProjectV_Group7_UI_API.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ProjectV_Group7_UI_API/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
