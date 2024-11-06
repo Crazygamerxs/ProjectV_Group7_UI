@@ -1,0 +1,99 @@
+﻿@page "/add-survivor"
+@inject SurvivorInformationService SurvivorInformationService
+
+@code {
+    private string? survivorName;
+    private DateTime currentDate = DateTime.Now;
+    private string? location;
+    private string? selectedStatus;
+    private string? selectedPriority;
+    private List<string> statuses = new() { "Located", "Missing", "In Need of Assistance" };
+    private List<string> priorities = new() { "Low", "Medium", "High", "Critical" };
+
+    [Parameter] public EventCallback<bool> OnClose { get; set; }
+
+    private bool isVisible = false;
+
+    public void Show()
+    {
+        isVisible = true;
+        StateHasChanged();
+    }
+
+    public void Hide()
+    {
+        isVisible = false;
+        StateHasChanged();
+    }
+
+    private async Task SaveSurvivor()
+    {
+        var survivor = new Survivor_Information
+            {
+                Date = currentDate,
+                SurvivorName = string.IsNullOrEmpty(survivorName) ? "Unknown" : survivorName,
+                Location = string.IsNullOrEmpty(location) ? "Unknown" : location,
+                Status = string.IsNullOrEmpty(selectedStatus) ? "Unknown" : selectedStatus,
+                Priority = string.IsNullOrEmpty(selectedPriority) ? "Unknown" : selectedPriority
+            };
+
+        // Add the survivor to the service
+        SurvivorInformationService.AddSurvivor(survivor);
+
+        await OnClose.InvokeAsync(false);
+        Hide();
+    }
+}
+
+@if (isVisible)
+{
+    <div class="modal fade show" style="display: block;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-light">
+                <div class="modal-header" style="background-color: #3498db;">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">Add New Survivor</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="survivorName">Survivor Name</label>
+                            <input type="text" class="form-control" id="survivorName" @bind="survivorName" placeholder="Enter survivor's name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date" value="@currentDate.ToString("yyyy-MM-dd")" disabled />
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" @bind="location" placeholder="Enter location" />
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select class="form-control" id="status" @bind="selectedStatus">
+                                <option value="">Select Status</option>
+                                @foreach (var status in statuses)
+                                {
+                                    <option value="@status">@status</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="priority">Priority</label>
+                            <select class="form-control" id="priority" @bind="selectedPriority">
+                                <option value="">Select Priority</option>
+                                @foreach (var priority in priorities)
+                                {
+                                    <option value="@priority">@priority</option>
+                                }
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="() => { Hide(); OnClose.InvokeAsync(false); }">Close</button>
+                    <button type="button" class="btn btn-primary" @onclick="SaveSurvivor">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

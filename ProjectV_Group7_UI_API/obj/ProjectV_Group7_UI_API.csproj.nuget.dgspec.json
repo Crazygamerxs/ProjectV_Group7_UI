@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\College_Work\\Semester-6\\Project V\\Code\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj": {}
+    "C:\\Users\\prais\\OneDrive\\Desktop\\ProjectV_Group7_UI\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj": {}
   },
   "projects": {
-    "D:\\College_Work\\Semester-6\\Project V\\Code\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj": {
+    "C:\\Users\\prais\\OneDrive\\Desktop\\ProjectV_Group7_UI\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\College_Work\\Semester-6\\Project V\\Code\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj",
+        "projectUniqueName": "C:\\Users\\prais\\OneDrive\\Desktop\\ProjectV_Group7_UI\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj",
         "projectName": "ProjectV_Group7_UI_API",
-        "projectPath": "D:\\College_Work\\Semester-6\\Project V\\Code\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj",
-        "packagesPath": "C:\\Users\\insha\\.nuget\\packages\\",
-        "outputPath": "D:\\College_Work\\Semester-6\\Project V\\Code\\ProjectV_Group7_UI_API\\obj\\",
+        "projectPath": "C:\\Users\\prais\\OneDrive\\Desktop\\ProjectV_Group7_UI\\ProjectV_Group7_UI_API\\ProjectV_Group7_UI_API.csproj",
+        "packagesPath": "C:\\Users\\prais\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\prais\\OneDrive\\Desktop\\ProjectV_Group7_UI\\ProjectV_Group7_UI_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\insha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\prais\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

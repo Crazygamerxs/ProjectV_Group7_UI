@@ -69,3 +69,43 @@ D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\bin\Debug\net6.
 D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.csproj.AssemblyReference.cache
 D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV.2B07B520.Up2Date
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\appsettings.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\critical-notifications.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\survivor-information.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\ProjectV_Group7_UI_API.staticwebassets.runtime.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\ProjectV_Group7_UI_API.exe
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\ProjectV_Group7_UI_API.deps.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\ProjectV_Group7_UI_API.runtimeconfig.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\ProjectV_Group7_UI_API.dll
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\ProjectV_Group7_UI_API.pdb
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.csproj.AssemblyReference.cache
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.AssemblyInfoInputs.cache
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.AssemblyInfo.cs
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.csproj.CoreCompileInputs.cache
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.RazorAssemblyInfo.cache
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.RazorAssemblyInfo.cs
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\staticwebassets\msbuild.ProjectV_Group7_UI_API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\staticwebassets\msbuild.build.ProjectV_Group7_UI_API.props
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ProjectV_Group7_UI_API.props
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ProjectV_Group7_UI_API.props
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\scopedcss\Pages\AddNotificationModal.razor.rz.scp.css
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\scopedcss\Pages\CriticalNotification.razor.rz.scp.css
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\scopedcss\bundle\ProjectV_Group7_UI_API.styles.css
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\scopedcss\projectbundle\ProjectV_Group7_UI_API.bundle.scp.css
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV.2B07B520.Up2Date
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.dll
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\refint\ProjectV_Group7_UI_API.dll
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.pdb
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.genruntimeconfig.cache
+C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\obj\Debug\net6.0\ref\ProjectV_Group7_UI_API.dll

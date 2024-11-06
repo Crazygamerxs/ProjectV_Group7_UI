@@ -1,15 +1,23 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager Navigation
 
 <PageTitle>ProjectV_Group7_UI_API</PageTitle>
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    @if (Navigation.Uri.Contains("survivor-management"))
+    {
+        <div class="sidebar">
+            <SurvivorMenu />
+        </div>
+    }
+    else
+    {
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+    }
 
     <main>
-
-
         <article class="content px-4">
             @Body
         </article>
