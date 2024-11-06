@@ -1,0 +1,29 @@
+.modal-content {
+    border-radius: 0.5rem; /* Rounded corners */
+}
+
+.modal-header {
+    background-color: #e74c3c; /* Red background */
+    border-bottom: 2px solid #e74c3c; /* Border color */
+}
+
+
+.btn-primary {
+    background-color: #e74c3c; /* Red color */
+    border-color: #e74c3c;
+}
+
+.btn-primary:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    border-color: #c0392b;
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Bootstrap secondary color */
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+    border-color: #545b62;
+}

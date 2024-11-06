@@ -1,3 +1,92 @@
+/* _content/ProjectV_Group7_UI_API/Pages/AddNotificationModal.razor.rz.scp.css */
+.modal-content[b-kje4vdiswf] {
+    border-radius: 0.5rem; /* Rounded corners */
+}
+
+.modal-header[b-kje4vdiswf] {
+    background-color: #e74c3c; /* Red background */
+    border-bottom: 2px solid #e74c3c; /* Border color */
+}
+
+
+.btn-primary[b-kje4vdiswf] {
+    background-color: #e74c3c; /* Red color */
+    border-color: #e74c3c;
+}
+
+.btn-primary:hover[b-kje4vdiswf] {
+    background-color: #c0392b; /* Darker red on hover */
+    border-color: #c0392b;
+}
+
+.btn-secondary[b-kje4vdiswf] {
+    background-color: #6c757d; /* Bootstrap secondary color */
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover[b-kje4vdiswf] {
+    background-color: #5a6268; /* Darker gray on hover */
+    border-color: #545b62;
+}
+/* _content/ProjectV_Group7_UI_API/Pages/CriticalNotification.razor.rz.scp.css */
+h2[b-mym6wv0fhf] {
+    color: #444; /* Darker heading color */
+}
+
+.notification-description[b-mym6wv0fhf] {
+    color: #777; /* Lighter text for the description */
+}
+
+input[type="text"][b-mym6wv0fhf] {
+    padding: 0.5rem; /* Padding for the search input */
+    margin-bottom: 1rem; /* Space below the input */
+    border: 1px solid #ccc; /* Border for the input */
+    border-radius: 4px; /* Rounded corners */
+}
+
+table[b-mym6wv0fhf] {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Merge borders */
+}
+
+th[b-mym6wv0fhf], td[b-mym6wv0fhf] {
+    border: 1px solid #ddd; /* Border for table cells */
+    padding: 8px; /* Padding in cells */
+    text-align: left; /* Left-align text */
+}
+
+th[b-mym6wv0fhf] {
+    background-color: #f2f2f2; /* Header background color */
+}
+
+tr:hover[b-mym6wv0fhf] {
+    background-color: rgba(255, 255, 255, 0.1); /* Hover effect on rows */
+}
+
+.btn-new-notification[b-mym6wv0fhf] {
+    background-color: #e74c3c; /* Reddish color for the button */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 20px; /* Space between heading and button */
+}
+
+.btn-new-notification:hover[b-mym6wv0fhf] {
+    background-color: #c0392b; /* Darker shade on hover */
+}
+
+.search-container[b-mym6wv0fhf] {
+    position: relative;
+    margin-bottom: 1rem; /* Space below the input */
+}
+
+.notes-column[b-mym6wv0fhf] {
+    width: 150px; /* Set a fixed width for the Notes column */
+    word-wrap: break-word; /* Allow long words to break */
+}
 /* _content/ProjectV_Group7_UI_API/Shared/MainLayout.razor.rz.scp.css */
 .page[b-apxd5u4c1q] {
     position: relative;
@@ -70,65 +159,54 @@ main[b-apxd5u4c1q] {
     }
 }
 /* _content/ProjectV_Group7_UI_API/Shared/NavMenu.razor.rz.scp.css */
-.navbar-toggler[b-4qa97npvvt] {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.top-row[b-4qa97npvvt] {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.navbar-brand[b-4qa97npvvt] {
-    font-size: 1.1rem;
-}
-
-.oi[b-4qa97npvvt] {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-}
-
+/* Additional styles for the Critical Notification History link */
 .nav-item[b-4qa97npvvt] {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+    font-size: 0.9rem; /* Ensure consistent font size */
+    padding-bottom: 0.5rem; /* Padding below each nav item */
 }
 
-    .nav-item:first-of-type[b-4qa97npvvt] {
-        padding-top: 1rem;
-    }
+.nav-item:first-of-type[b-4qa97npvvt] {
+    padding-top: 1rem; /* Padding above the first nav item */
+}
 
-    .nav-item:last-of-type[b-4qa97npvvt] {
-        padding-bottom: 1rem;
-    }
+.nav-item:last-of-type[b-4qa97npvvt] {
+    padding-bottom: 1rem; /* Padding below the last nav item */
+}
 
-    .nav-item[b-4qa97npvvt]  a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
+.nav-item[b-4qa97npvvt]  a {
+    color: #d7d7d7; /* Text color */
+    border-radius: 4px; /* Rounded corners */
+    height: 3rem; /* Height of the nav link */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    line-height: 3rem; /* Align text vertically */
+}
 
 .nav-item[b-4qa97npvvt]  a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
+    background-color: rgba(255,255,255,0.25); /* Background for active link */
+    color: white; /* Text color for active link */
 }
 
 .nav-item[b-4qa97npvvt]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+    background-color: rgba(255,255,255,0.1); /* Background on hover */
+    color: white; /* Text color on hover */
+}
+
+/* Styles for icons in nav items */
+.oi[b-4qa97npvvt] {
+    width: 2rem; /* Width of the icon */
+    font-size: 1.1rem; /* Font size for icons */
+    vertical-align: text-top; /* Align icons with text */
+    top: -2px; /* Fine-tune icon position */
 }
 
 @media (min-width: 641px) {
     .navbar-toggler[b-4qa97npvvt] {
-        display: none;
+        display: none; /* Hide toggler on larger screens */
     }
 
     .collapse[b-4qa97npvvt] {
-        /* Never collapse the sidebar for wide screens */
+        /* Ensure sidebar is displayed on wider screens */
         display: block;
     }
 }

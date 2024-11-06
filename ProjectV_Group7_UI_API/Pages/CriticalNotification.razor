@@ -1,0 +1,56 @@
+@page "/critical-notification-history"
+@inject CriticalNotificationService CriticalNotificationService
+
+<h2 style="display: inline-block;">Critical Notification History</h2>
+<button class="btn-new-notification" @onclick="ShowAddNotificationModal" style="float: right; margin-left: 20px;">New
+    Notification</button>
+
+<p class="notification-description">View a history of all notifications.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Recipient</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Priority</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var notification in filteredNotifications)
+        {
+            <tr>
+                <td>@notification.Date.ToString("MMM d")</td>
+                <td>@notification.Recipient</td>
+                <td>@notification.Type</td>
+                <td>@notification.Status</td>
+                <td>@notification.Priority</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<AddNotificationModal @ref="addNotificationModal" OnClose="HandleModalClose" />
+
+@code {
+    private string searchQuery = string.Empty;
+    private List<Critical_Notification> filteredNotifications = new();
+    private AddNotificationModal addNotificationModal;
+
+    protected override void OnInitialized()
+    {
+        filteredNotifications = CriticalNotificationService.GetNotifications();
+    }
+
+    private void ShowAddNotificationModal()
+    {
+        addNotificationModal.Show();
+    }
+
+    private void HandleModalClose()
+    {
+        // Reload notifications from the service after closing the modal
+        filteredNotifications = CriticalNotificationService.GetNotifications();
+    }
+}
