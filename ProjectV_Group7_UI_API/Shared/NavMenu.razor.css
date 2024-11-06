@@ -1,62 +1,51 @@
-.navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.top-row {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.navbar-brand {
-    font-size: 1.1rem;
-}
-
-.oi {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-}
-
+/* Additional styles for the Critical Notification History link */
 .nav-item {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+    font-size: 0.9rem; /* Ensure consistent font size */
+    padding-bottom: 0.5rem; /* Padding below each nav item */
 }
 
-    .nav-item:first-of-type {
-        padding-top: 1rem;
-    }
+.nav-item:first-of-type {
+    padding-top: 1rem; /* Padding above the first nav item */
+}
 
-    .nav-item:last-of-type {
-        padding-bottom: 1rem;
-    }
+.nav-item:last-of-type {
+    padding-bottom: 1rem; /* Padding below the last nav item */
+}
 
-    .nav-item ::deep a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
+.nav-item ::deep a {
+    color: #d7d7d7; /* Text color */
+    border-radius: 4px; /* Rounded corners */
+    height: 3rem; /* Height of the nav link */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    line-height: 3rem; /* Align text vertically */
+}
 
 .nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
+    background-color: rgba(255,255,255,0.25); /* Background for active link */
+    color: white; /* Text color for active link */
 }
 
 .nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+    background-color: rgba(255,255,255,0.1); /* Background on hover */
+    color: white; /* Text color on hover */
+}
+
+/* Styles for icons in nav items */
+.oi {
+    width: 2rem; /* Width of the icon */
+    font-size: 1.1rem; /* Font size for icons */
+    vertical-align: text-top; /* Align icons with text */
+    top: -2px; /* Fine-tune icon position */
 }
 
 @media (min-width: 641px) {
     .navbar-toggler {
-        display: none;
+        display: none; /* Hide toggler on larger screens */
     }
 
     .collapse {
-        /* Never collapse the sidebar for wide screens */
+        /* Ensure sidebar is displayed on wider screens */
         display: block;
     }
 }

@@ -9,55 +9,75 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjectV_Group7_UI_API
 build_property.RootNamespace = ProjectV_Group7_UI_API
-build_property.ProjectDir = D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\
+build_property.ProjectDir = C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API
+build_property.MSBuildProjectDirectory = C:\Users\prais\OneDrive\Desktop\ProjectV_Group7_UI\ProjectV_Group7_UI_API
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/App.razor]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/Counter.razor]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/AddSurvivorModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU3Vydml2b3JNb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/FetchData.razor]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/Index.razor]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/SurvivorManagement.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vydml2b3JNYW5hZ2VtZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/_Imports.razor]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/SurvivorManagementServices.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vydml2b3JNYW5hZ2VtZW50U2VydmljZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Shared/SurvivorMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZpdm9yTWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Shared/MainLayout.razor]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/AddNotificationModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkTm90aWZpY2F0aW9uTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-kje4vdiswf
+
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/CriticalNotification.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JpdGljYWxOb3RpZmljYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-mym6wv0fhf
+
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-apxd5u4c1q
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Shared/NavMenu.razor]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-4qa97npvvt
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/Error.cshtml]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/_Host.cshtml]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/_Layout.cshtml]
+[C:/Users/prais/OneDrive/Desktop/ProjectV_Group7_UI/ProjectV_Group7_UI_API/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,35 @@
+﻿<div class="top-row navbar navbar-dark" style="background-color: #1b1e3f; color: #ffffff; padding: 10px; width: 100%; box-sizing: border-box;">
+    <div class="container-fluid" style="padding-left: 0;">
+        <div style="width: 90%; max-width: 220px; overflow-wrap: break-word; word-break: break-word;">
+            <a class="navbar-brand" href="survivor-management-services" style="color: #ffffff; text-decoration: none; display: inline-block;">
+                Survivor Management <br /> Services
+            </a>
+        </div>
+    </div>
+</div>
+
+<div style="background-color: #1b1e3f; color: #ffffff; width: 250px; padding-top: 10px; min-height: 100vh;">
+    <nav class="flex-column">
+        <div class="nav-item px-3" style="margin-bottom: 10px;">
+            <NavLink class="nav-link"
+                     href="survivor-management-services"
+                     Match="NavLinkMatch.All"
+                     activeClass="active-link"
+                     style="color: #ffffff; display: flex; align-items: center; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.2s;">
+                <span class="oi oi-home" aria-hidden="true" style="margin-right: 8px;"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-4" style="margin-bottom: 10px;">
+            <NavLink class="nav-link"
+                     href="survivor-management"
+                     activeClass="active-link"
+                     style="color: #ffffff; display: flex; align-items: center; padding: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.2s;">
+                <span class="oi oi-person" aria-hidden="true" style="margin-right: 8px;"></span> Survivor Management
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private string? NavMenuCssClass => null;
+}
