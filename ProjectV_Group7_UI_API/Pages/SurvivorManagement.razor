@@ -1,0 +1,59 @@
+@page "/survivor-management"
+@inject SurvivorInformationService SurvivorInformationService
+
+<h2 style="display: inline-block; font-size: 24px; font-weight: bold;">Survivor Management</h2>
+<button
+    style="float: right; margin-left: 20px; background-color: #e74c3c; color: white; border: none; padding: 10px 20px; cursor: pointer;"
+    @onclick="ShowAddSurvivorModal">
+    New Survivor
+</button>
+
+<p style="font-size: 16px; color: #333;">View survivor information.</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr style="background-color: #1a2b5a; color: white; text-align: left; font-weight: bold;">
+            <th style="padding: 12px 15px; border: 1px solid #dddddd;">Date</th>
+            <th style="padding: 12px 15px; border: 1px solid #dddddd;">Survivor Name</th>
+            <th style="padding: 12px 15px; border: 1px solid #dddddd;">Location</th>
+            <th style="padding: 12px 15px; border: 1px solid #dddddd;">Status</th>
+            <th style="padding: 12px 15px; border: 1px solid #dddddd;">Priority</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var survivor in filteredSurvivors)
+        {
+            <tr style="background-color: @((filteredSurvivors.IndexOf(survivor) % 2 == 0) ? "#f3f3f3" : "white");">
+                <td style="padding: 12px 15px; border: 1px solid #dddddd;">@survivor.Date.ToString("MMM d")</td>
+                <td style="padding: 12px 15px; border: 1px solid #dddddd;">@survivor.SurvivorName</td>
+                <td style="padding: 12px 15px; border: 1px solid #dddddd;">@survivor.Location</td>
+                <td style="padding: 12px 15px; border: 1px solid #dddddd;">@survivor.Status</td>
+                <td style="padding: 12px 15px; border: 1px solid #dddddd;">@survivor.Priority</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<AddSurvivorModal @ref="addSurvivorModal" OnClose="HandleModalClose" />
+
+@code {
+    private string searchQuery = string.Empty;
+    private List<Survivor_Information> filteredSurvivors = new();
+    private AddSurvivorModal addSurvivorModal;
+
+    protected override void OnInitialized()
+    {
+        filteredSurvivors = SurvivorInformationService.GetSurvivors();
+    }
+
+    private void ShowAddSurvivorModal()
+    {
+        addSurvivorModal.Show();
+    }
+
+    private void HandleModalClose()
+    {
+        // Reload survivors from the service after closing the modal
+        filteredSurvivors = SurvivorInformationService.GetSurvivors();
+    }
+}

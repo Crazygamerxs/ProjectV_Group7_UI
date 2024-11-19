@@ -16,9 +16,13 @@
     color: #d7d7d7; /* Text color */
     border-radius: 4px; /* Rounded corners */
     height: 3rem; /* Height of the nav link */
+    padding-left: 1rem; /* Add padding for better alignment */
+    padding-right: 1rem; /* Add padding for better alignment */
     display: flex; /* Flexbox for alignment */
     align-items: center; /* Center items vertically */
+    justify-content: start; /* Align text and icon to the start (left) */
     line-height: 3rem; /* Align text vertically */
+    text-decoration: none; /* Remove underline */
 }
 
 .nav-item[b-4qa97npvvt]  a.active {
@@ -36,7 +40,8 @@
     width: 2rem; /* Width of the icon */
     font-size: 1.1rem; /* Font size for icons */
     vertical-align: text-top; /* Align icons with text */
-    top: -2px; /* Fine-tune icon position */
+    margin-right: 0.5rem; /* Space between the icon and text */
+    top: -1px; /* Fine-tune icon position */
 }
 
 @media (min-width: 641px) {

@@ -12,6 +12,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSingleton<CriticalNotificationService>();
 builder.Services.AddSingleton<AddNotificationModal>();
+builder.Services.AddSingleton<SurvivorInformationService>(); // Register SurvivorInformationService here
 
 // Register HttpClient with the application's BaseAddress
 builder.Services.AddScoped(sp => new HttpClient
