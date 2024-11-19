@@ -69,3 +69,5 @@ D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.
 D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.pdb
 D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\ProjectV_Group7_UI_API.genruntimeconfig.cache
 D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\obj\Debug\net6.0\ref\ProjectV_Group7_UI_API.dll
+D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\bin\Debug\net6.0\chats.json
+D:\College_Work\Semester-6\Project V\Code\ProjectV_Group7_UI_API\bin\Debug\net6.0\disasters.json

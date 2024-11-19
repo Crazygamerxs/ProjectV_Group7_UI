@@ -13,6 +13,12 @@ builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSingleton<CriticalNotificationService>();
 builder.Services.AddSingleton<AddNotificationModal>();
 
+// Register HttpClient with the application's BaseAddress
+builder.Services.AddScoped(sp => new HttpClient
+{
+    BaseAddress = new Uri(builder.Configuration["BaseApiUrl"] ?? "https://localhost:5001/") // Default to localhost if BaseApiUrl is not configured
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

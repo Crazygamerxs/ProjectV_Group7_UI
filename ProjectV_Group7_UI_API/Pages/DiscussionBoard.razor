@@ -1,0 +1,453 @@
+@page "/discussion"
+@inject IWebHostEnvironment Env
+
+@using System.Text.Json
+@using System.Text.Json.Serialization
+
+<h3>Discussion Board</h3>
+
+<div class="discussion-board-container">
+    <!-- sidebar_messages_messages_messages_messages_messages -->
+    <div class="sidebar_messages_messages_messages_messages_messages_messages_messages">
+        <div class="search-bar">
+            <input type="text" placeholder="Search" class="search-input" @bind="SearchQuery" @bind:event="oninput" />
+        </div>
+
+        <div class="discussion-topics">
+            @if (FilteredDisasters == null)
+            {
+                <p>Loading disasters...</p>
+            }
+            else if (FilteredDisasters.Count == 0)
+            {
+                <p>No matching disasters found.</p>
+            }
+            else
+            {
+                @foreach (var disaster in FilteredDisasters)
+                {
+                    <div class="discussion-topic @((disaster.id == SelectedDisasterId ? "selected" : ""))" @onclick="() => SelectDisaster(disaster.id)">
+                        <div class="topic-icon">
+                            @disaster.name.Substring(0, 2).ToUpper()
+                        </div>
+                        <span>@disaster.name</span>
+                    </div>
+                }
+            }
+        </div>
+
+        <button class="add-new-button" @onclick="ShowAddNewPopup">+ Add new</button>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area">
+        <h4>@(SelectedDisaster?.name ?? "Welcome to the Discussion Board!")</h4>
+
+        <div class="messages">
+            @if (SelectedChats == null || !SelectedChats.Any())
+            {
+                <p>@(SelectedDisaster == null ? "Please select a discussion to get started." : "No messages yet. Start the conversation!")</p>
+            }
+            else
+            {
+                @foreach (var chat in SelectedChats)
+                {
+                    <div class="message @(chat.side)">
+                        <span class="user-icon">👤</span>
+                        <div class="message-content">@chat.message</div>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" placeholder="Send a chat here" class="chat-input" @bind="NewMessage" @bind:event="oninput" />
+            <button class="send-button" @onclick="SendMessage">➤</button>
+        </div>
+    </div>
+
+    <!-- Add New Popup -->
+    @if (IsPopupVisible)
+    {
+        <div class="popup-backdrop">
+            <div class="popup">
+                <h5>Add New Disaster</h5>
+                <input type="text" placeholder="Enter disaster name" @bind="NewDisasterName" />
+                <div class="popup-actions">
+                    <button class="popup-button" @onclick="AddNewDisaster">Add</button>
+                    <button class="popup-button cancel" @onclick="ClosePopup">Cancel</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .discussion-board-container {
+        display: flex;
+        height: 100vh;
+    }
+
+    /* sidebar_messages_messages_messages_messages_messages styles */
+    .sidebar_messages_messages_messages_messages_messages {
+        width: 25%;
+        background-color: #f8f9fa;
+        border-right: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        overflow-y: auto;
+    }
+
+    .search-bar {
+        margin-bottom: 1rem;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .discussion-topics {
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .discussion-topic {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 1px solid transparent;
+    }
+
+        .discussion-topic.selected {
+            background-color: #e2e6ea;
+            border-left: 4px solid #007bff;
+        }
+
+    .topic-icon {
+        width: 30px;
+        height: 30px;
+        background-color: #007bff;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        font-weight: bold;
+    }
+
+    .add-new-button {
+        padding: 0.5rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+        .add-new-button:hover {
+            background-color: #0056b3;
+        }
+
+    /* Chat area styles */
+    .chat-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: #fff;
+    }
+
+    .messages {
+        flex: 1;
+        overflow-y: auto;
+        margin-bottom: 1rem;
+        padding-right: 1rem;
+    }
+
+    .message {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+        .message.left {
+            justify-content: flex-start;
+        }
+
+        .message.right {
+            justify-content: flex-end;
+        }
+
+    .message-content {
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        background-color: #f1f1f1;
+    }
+
+    .message.right .message-content {
+        background-color: #cfe2ff;
+    }
+
+    .chat-input-area {
+        display: flex;
+        align-items: center;
+    }
+
+    .chat-input {
+        flex: 1;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 0.5rem;
+    }
+
+    .send-button {
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .send-button:hover {
+            background-color: #0056b3;
+        }
+
+    /* Popup styles */
+    .popup-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .popup {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 4px;
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+        .popup h5 {
+            margin: 0 0 1rem 0;
+        }
+
+    .popup-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+
+    .popup-button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .popup-button.cancel {
+            background-color: #f44336;
+            color: white;
+        }
+
+            .popup-button.cancel:hover {
+                background-color: #d32f2f;
+            }
+
+        .popup-button:not(.cancel) {
+            background-color: #007bff;
+            color: white;
+        }
+
+            .popup-button:not(.cancel):hover {
+                background-color: #0056b3;
+            }
+</style>
+
+@code {
+    private List<Disaster>? Disasters;
+    private List<Disaster>? FilteredDisasters;
+    private Disaster? SelectedDisaster;
+    private List<Chat>? SelectedChats;
+    private int? SelectedDisasterId;
+
+    private string NewMessage = "";
+    private string NewDisasterName = "";
+    private bool IsPopupVisible = false;
+
+    // Define the SearchQuery property
+    private string? searchQuery;
+    private string? SearchQuery
+    {
+        get => searchQuery;
+        set
+        {
+            searchQuery = value;
+            OnSearchChanged();
+        }
+    }
+
+    private Dictionary<int, List<Chat>> Chats = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadDisastersAsync();
+        await LoadChatsAsync();
+        FilteredDisasters = Disasters;
+
+        if (Disasters?.Count > 0)
+        {
+            SelectDisaster(Disasters[0].id);
+        }
+    }
+
+    private async Task LoadDisastersAsync()
+    {
+        var disastersPath = Path.Combine(Env.ContentRootPath, "disasters.json");
+        if (File.Exists(disastersPath))
+        {
+            var disastersJson = await File.ReadAllTextAsync(disastersPath);
+            Disasters = JsonSerializer.Deserialize<List<Disaster>>(disastersJson);
+        }
+        else
+        {
+            Disasters = new List<Disaster>();
+        }
+    }
+
+    private async Task LoadChatsAsync()
+    {
+        var chatsPath = Path.Combine(Env.ContentRootPath, "chats.json");
+        if (File.Exists(chatsPath))
+        {
+            var chatsJson = await File.ReadAllTextAsync(chatsPath);
+            Chats = JsonSerializer.Deserialize<Dictionary<int, List<Chat>>>(chatsJson) ?? new();
+        }
+        else
+        {
+            Chats = new Dictionary<int, List<Chat>>();
+        }
+    }
+
+    private async Task SaveDisastersAsync()
+    {
+        var disastersPath = Path.Combine(Env.ContentRootPath, "disasters.json");
+        var disastersJson = JsonSerializer.Serialize(Disasters);
+        await File.WriteAllTextAsync(disastersPath, disastersJson);
+    }
+
+    private async Task SaveChatsAsync()
+    {
+        var chatsPath = Path.Combine(Env.ContentRootPath, "chats.json");
+        var chatsJson = JsonSerializer.Serialize(Chats);
+        await File.WriteAllTextAsync(chatsPath, chatsJson);
+    }
+
+    private void OnSearchChanged()
+    {
+        if (string.IsNullOrWhiteSpace(SearchQuery))
+        {
+            FilteredDisasters = Disasters;
+        }
+        else
+        {
+            FilteredDisasters = Disasters?.Where(d => d.name.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+    }
+
+    private void ShowAddNewPopup()
+    {
+        IsPopupVisible = true;
+        NewDisasterName = string.Empty;
+    }
+
+    private async void AddNewDisaster()
+    {
+        if (!string.IsNullOrWhiteSpace(NewDisasterName))
+        {
+            var newDisaster = new Disaster
+                {
+                    id = (Disasters?.Max(d => d.id) ?? 0) + 1,
+                    name = NewDisasterName
+                };
+
+            Disasters?.Add(newDisaster);
+            FilteredDisasters = Disasters;
+
+            await SaveDisastersAsync();
+        }
+
+        ClosePopup();
+    }
+
+    private void ClosePopup()
+    {
+        IsPopupVisible = false;
+    }
+
+    private async void SelectDisaster(int id)
+    {
+        SelectedDisasterId = id;
+        SelectedDisaster = Disasters?.FirstOrDefault(d => d.id == id);
+        SelectedChats = Chats.ContainsKey(id) ? Chats[id] : new List<Chat>();
+    }
+
+    private async void SendMessage()
+    {
+        if (!string.IsNullOrWhiteSpace(NewMessage) && SelectedDisasterId.HasValue)
+        {
+            var newChat = new Chat
+                {
+                    user = "You",
+                    message = NewMessage,
+                    side = "right"
+                };
+
+            if (!Chats.ContainsKey(SelectedDisasterId.Value))
+            {
+                Chats[SelectedDisasterId.Value] = new List<Chat>();
+            }
+
+            Chats[SelectedDisasterId.Value].Add(newChat);
+            SelectedChats = Chats[SelectedDisasterId.Value];
+
+            NewMessage = "";
+            await SaveChatsAsync();
+        }
+    }
+
+    private class Disaster
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+
+    private class Chat
+    {
+        public string user { get; set; }
+        public string message { get; set; }
+        public string side { get; set; }
+    }
+}
