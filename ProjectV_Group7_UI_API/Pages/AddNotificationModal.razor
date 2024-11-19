@@ -4,6 +4,7 @@
 
 @code {
     private string? notes;
+
     private DateTime currentDate = DateTime.Now;
     private string? selectedRecipient;
     private string? notificationType;
@@ -15,7 +16,7 @@
 
     [Parameter] public EventCallback<bool> OnClose { get; set; }
 
-    private bool isVisible = false;
+    public bool isVisible = false;
 
     public void Show()
     {
