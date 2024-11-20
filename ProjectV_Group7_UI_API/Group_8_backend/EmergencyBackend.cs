@@ -40,8 +40,8 @@ namespace EmergencyServices.Group8
             Notification notif = BackendHelper.JsonToNotification(notifJson);
 
             ProcessedDisaster processedDisaster = BackendHelper.ConvertToProcessedDisaster(notif);
-            supabase.From<ProcessedDisaster>().Insert(processedDisaster);
-            return processedDisaster;
+            var ret = supabase.From<ProcessedDisaster>().Insert(processedDisaster);
+            return ret.Result.Model; // We need to return this since it has the correct creation time info AND the correct ID
         }
 
         public static async Task<List<ProcessedDisaster>> GetAllProcessedDisastersAsync()
