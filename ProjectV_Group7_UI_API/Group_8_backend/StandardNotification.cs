@@ -12,10 +12,10 @@ namespace EmergencyServices.Group8
         public float Latitude { get; set; } // NEW
         public float Longitude { get; set; } // NEW
 
-        public override string ToString()
-        {
-            return Id + " " + DisasterType + " " + Description + " " + Timestamp.ToString() + " " + SeverityLevel + " " + Source + "\n";
-        }
-    }
-}
+//         public override string ToString()
+//         {
+//             return Id + " " + DisasterType + " " + Description + " " + Timestamp.ToString() + " " + SeverityLevel + " " + Source + "\n";
+//         }
+//     }
+// }
 

@@ -8,15 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace EmergencyServices.Group8
-{
-    internal static class BackendHelper
-    {
-        public static List<ProcessingInfo> DisasterProcessingInfo;
+// namespace EmergencyServices.Group8
+// {
+//     internal static class BackendHelper
+//     {
+//         public static List<ProcessingInfo> DisasterProcessingInfo;
 
-        public static List<UserDisasterReport> UserDisasterReports = new List<UserDisasterReport>();
+//         public static List<UserDisasterReport> UserDisasterReports = new List<UserDisasterReport>();
 
-        private const ulong acceptedTimeDiffClauseOne = 36000000000; // currently single hour binary 
+//         private const ulong acceptedTimeDiffClauseOne = 36000000000; // currently single hour binary 
 
         private const ulong acceptedTimeDiffClauseTwo = 3000000000; // currently 5 minute binary
         public static Notification JsonToNotification(string json)
@@ -100,24 +100,24 @@ namespace EmergencyServices.Group8
             return true;
         }
 
-        internal static ProcessedDisaster ConvertToProcessedDisaster(Notification notif)
-        {
-            // Convert the notification's disaster type to uppercase for case-insensitive matching
-            string notificationDisasterType = notif.DisasterType.ToUpper();
+//         internal static ProcessedDisaster ConvertToProcessedDisaster(Notification notif)
+//         {
+//             // Convert the notification's disaster type to uppercase for case-insensitive matching
+//             string notificationDisasterType = notif.DisasterType.ToUpper();
 
-            ProcessingInfo matchingInfo = null;
+//             ProcessingInfo matchingInfo = null;
 
-            // Loop through each entry in DisasterProcessingInfo to find a match
-            for (int i = 0; i < DisasterProcessingInfo.Count; i++)
-            {
-                // Retrieve the disaster type from the database, convert it to uppercase, and compare
-                string databaseDisasterType = DisasterProcessingInfo[i].DisasterType.ToUpper();
-                if (databaseDisasterType == notificationDisasterType)
-                {
-                    matchingInfo = DisasterProcessingInfo[i];
-                    break;
-                }
-            }
+//             // Loop through each entry in DisasterProcessingInfo to find a match
+//             for (int i = 0; i < DisasterProcessingInfo.Count; i++)
+//             {
+//                 // Retrieve the disaster type from the database, convert it to uppercase, and compare
+//                 string databaseDisasterType = DisasterProcessingInfo[i].DisasterType.ToUpper();
+//                 if (databaseDisasterType == notificationDisasterType)
+//                 {
+//                     matchingInfo = DisasterProcessingInfo[i];
+//                     break;
+//                 }
+//             }
 
             // Create a new ProcessedDisaster object and copy info from Notification
             var processedDisaster = new ProcessedDisaster
@@ -133,28 +133,28 @@ namespace EmergencyServices.Group8
                 Longitude = notif.Longitude
             };
 
-            // Populate steps based on matching ProcessingInfo, or set to default steps if not found
-            if (matchingInfo != null)
-            {
-                processedDisaster.PreparationSteps = matchingInfo.PrecautionSteps;
-                processedDisaster.ActiveSteps = matchingInfo.DuringDisasterSteps;
-                processedDisaster.RecoverySteps = matchingInfo.RecoverySteps;
-            }
-            else
-            {
-                processedDisaster.PreparationSteps = "Listen to your local news station, review and practice evacuation routes, and make sure that your home and belongings are secured";
-                processedDisaster.ActiveSteps = "Watch for signs of a disaster and be prepared to evacuate or find proper shelter";
-                processedDisaster.RecoverySteps = "Lookout for instructions from officials and community leaders, inspect your area for damages, listen to your local radio or news channel for further instructions";
+//             // Populate steps based on matching ProcessingInfo, or set to default steps if not found
+//             if (matchingInfo != null)
+//             {
+//                 processedDisaster.PreparationSteps = matchingInfo.PrecautionSteps;
+//                 processedDisaster.ActiveSteps = matchingInfo.DuringDisasterSteps;
+//                 processedDisaster.RecoverySteps = matchingInfo.RecoverySteps;
+//             }
+//             else
+//             {
+//                 processedDisaster.PreparationSteps = "Listen to your local news station, review and practice evacuation routes, and make sure that your home and belongings are secured";
+//                 processedDisaster.ActiveSteps = "Watch for signs of a disaster and be prepared to evacuate or find proper shelter";
+//                 processedDisaster.RecoverySteps = "Lookout for instructions from officials and community leaders, inspect your area for damages, listen to your local radio or news channel for further instructions";
 
-            }
+//             }
 
-            return processedDisaster;
-        }
+//             return processedDisaster;
+//         }
 
-        internal static bool VerifyUserReport(UserDisasterReport usrReport)
-        {
-            if (usrReport == null)
-                return false;
+//         internal static bool VerifyUserReport(UserDisasterReport usrReport)
+//         {
+//             if (usrReport == null)
+//                 return false;
 
             foreach (UserDisasterReport r in UserDisasterReports)
             {

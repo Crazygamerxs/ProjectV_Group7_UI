@@ -5,6 +5,11 @@
 <button class="btn-new-notification" @onclick="ShowAddNotificationModal" style="float: right; margin-left: 20px;">New
     Notification</button>
 
+<!-- Filter Button with Icon -->
+<button class="btn-filter-notifications" @onclick="ShowFilterOptions" style="float: right;">
+    <i class="fas fa-filter"></i> Filter
+</button>
+
 <p class="notification-description">View a history of all notifications.</p>
 
 <table>
@@ -33,10 +38,23 @@
 
 <AddNotificationModal @ref="addNotificationModal" OnClose="HandleModalClose" />
 
+<!-- Filter Modal -->
+<div class="filter-modal" style="display: @(isFilterVisible ? "block" : "none");">
+    <div class="modal-content">
+        <h4>Filter Notifications</h4>
+        <input type="text" @bind="searchQuery" placeholder="Search....." />
+        <div class="modal-actions">
+            <button @onclick="ApplyFilter" class="btn-apply-filter">Apply Filter</button>
+            <button @onclick="ClearFilter" class="btn-clear-filter">Clear Filter</button>
+        </div>
+    </div>
+</div>
+
 @code {
     private string searchQuery = string.Empty;
     private List<Critical_Notification> filteredNotifications = new();
     private AddNotificationModal addNotificationModal;
+    private bool isFilterVisible = false;
 
     protected override void OnInitialized()
     {
@@ -50,7 +68,34 @@
 
     private void HandleModalClose()
     {
-        // Reload notifications from the service after closing the modal
+        filteredNotifications = CriticalNotificationService.GetNotifications();
+    }
+
+    private void ShowFilterOptions()
+    {
+        isFilterVisible = !isFilterVisible;
+    }
+
+    private void ApplyFilter()
+    {
+        if (string.IsNullOrEmpty(searchQuery))
+        {
+            filteredNotifications = CriticalNotificationService.GetNotifications();
+        }
+        else
+        {
+            filteredNotifications = CriticalNotificationService.GetNotifications()
+            .Where(n => n.Recipient.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            n.Type.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            n.Status.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            n.Priority.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+        }
+    }
+
+    private void ClearFilter()
+    {
+        searchQuery = string.Empty;
         filteredNotifications = CriticalNotificationService.GetNotifications();
     }
 }

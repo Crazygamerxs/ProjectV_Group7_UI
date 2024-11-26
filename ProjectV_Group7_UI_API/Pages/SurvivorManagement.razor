@@ -2,10 +2,13 @@
 @inject SurvivorInformationService SurvivorInformationService
 
 <h2 style="display: inline-block; font-size: 24px; font-weight: bold;">Survivor Management</h2>
-<button
-    style="float: right; margin-left: 20px; background-color: #e74c3c; color: white; border: none; padding: 10px 20px; cursor: pointer;"
-    @onclick="ShowAddSurvivorModal">
+
+<button class="btn-new-notification" @onclick="ShowAddSurvivorModal" style="float: right; margin-left: 20px;">
     New Survivor
+</button>
+
+<button class="btn-filter-notifications" @onclick="ShowFilterOptions" style="float: right;">
+    <i class="fa fa-filter"></i> Filter
 </button>
 
 <p style="font-size: 16px; color: #333;">View survivor information.</p>
@@ -36,10 +39,17 @@
 
 <AddSurvivorModal @ref="addSurvivorModal" OnClose="HandleModalClose" />
 
+<div class="filter-options" style="display: @(isFilterVisible ? "block" : "none");">
+    <input type="text" @bind="searchQuery" placeholder="Search....." />
+    <button @onclick="ApplyFilter">Apply Filter</button>
+    <button @onclick="ClearFilter">Clear Filter</button>
+</div>
+
 @code {
     private string searchQuery = string.Empty;
     private List<Survivor_Information> filteredSurvivors = new();
     private AddSurvivorModal addSurvivorModal;
+    private bool isFilterVisible = false;
 
     protected override void OnInitialized()
     {
@@ -54,6 +64,34 @@
     private void HandleModalClose()
     {
         // Reload survivors from the service after closing the modal
+        filteredSurvivors = SurvivorInformationService.GetSurvivors();
+    }
+
+    private void ShowFilterOptions()
+    {
+        isFilterVisible = !isFilterVisible;
+    }
+
+    private void ApplyFilter()
+    {
+        if (string.IsNullOrEmpty(searchQuery))
+        {
+            filteredSurvivors = SurvivorInformationService.GetSurvivors();
+        }
+        else
+        {
+            filteredSurvivors = SurvivorInformationService.GetSurvivors()
+            .Where(s => s.SurvivorName.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            s.Location.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            s.Status.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            s.Priority.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+        }
+    }
+
+    private void ClearFilter()
+    {
+        searchQuery = string.Empty;
         filteredSurvivors = SurvivorInformationService.GetSurvivors();
     }
 }
