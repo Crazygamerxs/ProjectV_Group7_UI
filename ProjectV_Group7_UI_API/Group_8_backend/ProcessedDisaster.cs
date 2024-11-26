@@ -1,6 +1,5 @@
 using Postgrest.Models;
 using Postgrest.Attributes;
-using System;
 
 namespace EmergencyServices.Group8
 {
@@ -37,10 +36,17 @@ namespace EmergencyServices.Group8
         [Column("notif_source")]
         public string Source { get; set; }  // NWS or Emergency Services
 
+        [Column("latitude")] // NEW
+        public float Latitude { get; set; }
+
+        [Column("longitude")] // NEW
+        public float Longitude { get; set; }
+
         public override string ToString()
         {
             return Id + " " + DisasterType + " " + Priority + " " + Description + " " + PreparationSteps + " " + ActiveSteps + " " + RecoverySteps + " " + Timestamp.ToString() + " " + SeverityLevel + " " + Source + '\n';
         }
     }
 }
+
 

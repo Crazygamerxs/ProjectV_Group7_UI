@@ -1,6 +1,5 @@
 using Postgrest.Models;
 using Postgrest.Attributes;
-using System;
 
 namespace EmergencyServices.Group8 // Created as part of ticket 105, for use in ticket 107
 {
