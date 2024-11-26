@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Components.Web;
 using ProjectV_Group7_UI_API.Data;
 using ProjectV_Group7_UI_API.Pages;
 using System.Text.Json;
-using EmergencyServices.Group8;
+// using EmergencyServices.Group8;
 
-EmergencyBackend.Init(); // TESTING
+// EmergencyBackend.Init(); // TESTING
 
 var builder = WebApplication.CreateBuilder(args);
 

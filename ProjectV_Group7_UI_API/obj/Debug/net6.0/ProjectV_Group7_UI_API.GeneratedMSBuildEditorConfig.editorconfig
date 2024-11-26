@@ -42,10 +42,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/SurvivorManagement.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vydml2b3JNYW5hZ2VtZW50LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/SurvivorMangementServices.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vydml2b3JNYW5nZW1lbnRTZXJ2aWNlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -65,6 +61,10 @@ build_metadata.AdditionalFiles.CssScope = b-kje4vdiswf
 [D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/CriticalNotification.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JpdGljYWxOb3RpZmljYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-mym6wv0fhf
+
+[D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Pages/SurvivorManagement.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vydml2b3JNYW5hZ2VtZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-v0yugl3962
 
 [D:/College_Work/Semester-6/Project V/Code/ProjectV_Group7_UI_API/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

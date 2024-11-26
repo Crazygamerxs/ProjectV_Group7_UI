@@ -56,3 +56,75 @@ tr:hover {
     width: 150px; /* Set a fixed width for the Notes column */
     word-wrap: break-word; /* Allow long words to break */
 }
+
+/* Filter Button */
+.btn-filter-notifications {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-filter-notifications:hover {
+    background-color: #2980b9;
+}
+
+.btn-filter-notifications i {
+    margin-right: 8px; /* Add space between icon and text */
+}
+
+/* Modal Styling */
+.filter-modal {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-content h4 {
+    margin-top: 0;
+    color: #444;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-apply-filter, .btn-clear-filter {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-apply-filter {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.btn-apply-filter:hover {
+    background-color: #27ae60;
+}
+
+.btn-clear-filter {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-clear-filter:hover {
+    background-color: #c0392b;
+}
