@@ -14,16 +14,16 @@ namespace EmergencyServices.Group8
         public DateTime Date { get; set; }
 
         [Column("survivor_name")]
-        public string SurvivorName { get; set; }
+        public string? SurvivorName { get; set; }
 
         [Column("location")]
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
         [Column("status")]
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         [Column("priority")]
-        public string Priority { get; set; }
+        public string? Priority { get; set; }
     }
 }
 

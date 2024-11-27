@@ -1,0 +1,130 @@
+h2[b-mym6wv0fhf] {
+    color: #444; /* Darker heading color */
+}
+
+.notification-description[b-mym6wv0fhf] {
+    color: #777; /* Lighter text for the description */
+}
+
+input[type="text"][b-mym6wv0fhf] {
+    padding: 0.5rem; /* Padding for the search input */
+    margin-bottom: 1rem; /* Space below the input */
+    border: 1px solid #ccc; /* Border for the input */
+    border-radius: 4px; /* Rounded corners */
+}
+
+table[b-mym6wv0fhf] {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Merge borders */
+}
+
+th[b-mym6wv0fhf], td[b-mym6wv0fhf] {
+    border: 1px solid #ddd; /* Border for table cells */
+    padding: 8px; /* Padding in cells */
+    text-align: left; /* Left-align text */
+}
+
+th[b-mym6wv0fhf] {
+    background-color: #f2f2f2; /* Header background color */
+}
+
+tr:hover[b-mym6wv0fhf] {
+    background-color: rgba(255, 255, 255, 0.1); /* Hover effect on rows */
+}
+
+.btn-new-notification[b-mym6wv0fhf] {
+    background-color: #e74c3c; /* Reddish color for the button */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 20px; /* Space between heading and button */
+}
+
+.btn-new-notification:hover[b-mym6wv0fhf] {
+    background-color: #c0392b; /* Darker shade on hover */
+}
+
+.search-container[b-mym6wv0fhf] {
+    position: relative;
+    margin-bottom: 1rem; /* Space below the input */
+}
+
+.notes-column[b-mym6wv0fhf] {
+    width: 150px; /* Set a fixed width for the Notes column */
+    word-wrap: break-word; /* Allow long words to break */
+}
+
+/* Filter Button */
+.btn-filter-notifications[b-mym6wv0fhf] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-filter-notifications:hover[b-mym6wv0fhf] {
+    background-color: #2980b9;
+}
+
+.btn-filter-notifications i[b-mym6wv0fhf] {
+    margin-right: 8px; /* Add space between icon and text */
+}
+
+/* Modal Styling */
+.filter-modal[b-mym6wv0fhf] {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-content h4[b-mym6wv0fhf] {
+    margin-top: 0;
+    color: #444;
+}
+
+.modal-actions[b-mym6wv0fhf] {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-apply-filter[b-mym6wv0fhf], .btn-clear-filter[b-mym6wv0fhf] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-apply-filter[b-mym6wv0fhf] {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.btn-apply-filter:hover[b-mym6wv0fhf] {
+    background-color: #27ae60;
+}
+
+.btn-clear-filter[b-mym6wv0fhf] {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-clear-filter:hover[b-mym6wv0fhf] {
+    background-color: #c0392b;
+}
