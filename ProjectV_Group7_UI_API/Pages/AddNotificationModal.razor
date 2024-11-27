@@ -1,6 +1,5 @@
 @page "/add-notification"
 @using System.Text.Json
-@inject CriticalNotificationService CriticalNotificationService
 
 @code {
     private string? notes;
@@ -12,7 +11,7 @@
     private string? selectedPriority; // New field for priority
     private List<string> recipients = new() { "Recipient 1", "Recipient 2", "Recipient 3" };
     private List<string> statuses = new() { "Pending", "Delivered", "In Progress" }; // Example statuses
-    private List<string> priorities = new() { "Low", "Medium", "High", "Very High" }; // Priority options
+    private List<string> priorities = new() { "Watch", "Warning", "Urgent", "Critical" }; // Priority options
 
     [Parameter] public EventCallback<bool> OnClose { get; set; }
 
@@ -33,20 +32,19 @@
     private async Task SaveNotification()
     {
         // Log the values for debugging
-        Console.WriteLine($"Notes: {notes}, Date: {currentDate}, Recipient: {selectedRecipient}, Type: {notificationType}, Status: {selectedStatus}, Priority: {selectedPriority}");
+        Console.WriteLine($"Date: {currentDate}, Source: {selectedRecipient}, Type: {notificationType}, Status: {selectedStatus}, Priority: {selectedPriority}");
 
-        var notification = new Critical_Notification
+        var notification = new EmergencyServices.Group8.ProcessedDisaster
         {
-            Date = currentDate,
-            Recipient = string.IsNullOrEmpty(selectedRecipient) ? "N/A" : selectedRecipient,
-            Type = string.IsNullOrEmpty(notificationType) ? "N/A" : notificationType,
-            Status = string.IsNullOrEmpty(selectedStatus) ? "N/A" : selectedStatus,
+            Timestamp = currentDate,
+            Source = string.IsNullOrEmpty(selectedRecipient) ? "N/A" : selectedRecipient,
+            DisasterType = string.IsNullOrEmpty(notificationType) ? "N/A" : notificationType,
+            Description = string.IsNullOrEmpty(selectedStatus) ? "N/A" : selectedStatus,
             Priority = string.IsNullOrEmpty(selectedPriority) ? "N/A" : selectedPriority, // Save the priority
-            Notes = string.IsNullOrEmpty(notes) ? "N/A" : notes
         };
 
         // Add the notification to the service
-        CriticalNotificationService.AddNotification(notification);
+        // CriticalNotificationService.AddNotification(notification);
 
         await OnClose.InvokeAsync(false);
         Hide();

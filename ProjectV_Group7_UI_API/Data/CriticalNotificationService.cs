@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using EmergencyServices.Group8;
 
 public class CriticalNotificationService
 {
-    private List<Critical_Notification> notifications;
+    private List<Critical_Notification> notifications; // OLD CODE THAT IS NOT LINKED TO GROUP 8
 
     public CriticalNotificationService()
     {

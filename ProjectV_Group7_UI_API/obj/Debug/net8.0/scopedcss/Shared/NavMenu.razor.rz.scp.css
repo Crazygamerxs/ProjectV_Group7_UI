@@ -1,0 +1,56 @@
+/* Additional styles for the Critical Notification History link */
+.nav-item[b-4qa97npvvt] {
+    font-size: 0.9rem; /* Ensure consistent font size */
+    padding-bottom: 0.5rem; /* Padding below each nav item */
+}
+
+.nav-item:first-of-type[b-4qa97npvvt] {
+    padding-top: 1rem; /* Padding above the first nav item */
+}
+
+.nav-item:last-of-type[b-4qa97npvvt] {
+    padding-bottom: 1rem; /* Padding below the last nav item */
+}
+
+.nav-item[b-4qa97npvvt]  a {
+    color: #d7d7d7; /* Text color */
+    border-radius: 4px; /* Rounded corners */
+    height: 3rem; /* Height of the nav link */
+    padding-left: 1rem; /* Add padding for better alignment */
+    padding-right: 1rem; /* Add padding for better alignment */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: start; /* Align text and icon to the start (left) */
+    line-height: 3rem; /* Align text vertically */
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-item[b-4qa97npvvt]  a.active {
+    background-color: rgba(255,255,255,0.25); /* Background for active link */
+    color: white; /* Text color for active link */
+}
+
+.nav-item[b-4qa97npvvt]  a:hover {
+    background-color: rgba(255,255,255,0.1); /* Background on hover */
+    color: white; /* Text color on hover */
+}
+
+/* Styles for icons in nav items */
+.oi[b-4qa97npvvt] {
+    width: 2rem; /* Width of the icon */
+    font-size: 1.1rem; /* Font size for icons */
+    vertical-align: text-top; /* Align icons with text */
+    margin-right: 0.5rem; /* Space between the icon and text */
+    top: -1px; /* Fine-tune icon position */
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-4qa97npvvt] {
+        display: none; /* Hide toggler on larger screens */
+    }
+
+    .collapse[b-4qa97npvvt] {
+        /* Ensure sidebar is displayed on wider screens */
+        display: block;
+    }
+}
