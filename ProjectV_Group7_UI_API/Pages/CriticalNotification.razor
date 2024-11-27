@@ -103,7 +103,7 @@ else
         else 
         {
              string newQuery = searchQuery;
-             switch (newQuery) // This was the original intended functionality of the project, as described in the documentation we made over a month ago
+             switch (newQuery.ToUpper()) // This was the original intended functionality of the project, as described in the documentation we made over a month ago
              {
                  case "WATCH":
                      filteredNotifications = await EmergencyBackend.GetDisastersByPriorityAsync(DisasterTypeEnums.Watch);
