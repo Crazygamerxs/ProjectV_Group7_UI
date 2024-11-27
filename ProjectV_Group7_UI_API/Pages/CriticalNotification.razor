@@ -102,8 +102,8 @@ else
         }
         else 
         {
-             string newQuery = searchQuery;
-             switch (newQuery.ToUpper()) // This was the original intended functionality of the project, as described in the documentation we made over a month ago
+             string newQuery = searchQuery.ToUpper();
+             switch (newQuery) // This was the original intended functionality of the project, as described in the documentation we made over a month ago
              {
                  case "WATCH":
                      filteredNotifications = await EmergencyBackend.GetDisastersByPriorityAsync(DisasterTypeEnums.Watch);
@@ -118,16 +118,16 @@ else
                      filteredNotifications = await EmergencyBackend.GetDisastersByPriorityAsync(DisasterTypeEnums.Critical);
                      break;
                  default:
-                     filteredNotifications = await EmergencyBackend.GetAllProcessedDisastersAsync();
+                    filteredNotifications = filteredNotifications.Where(n => 
+                    n.DisasterType.ToUpper().Contains(newQuery, StringComparison.OrdinalIgnoreCase) ||
+                    n.Description.ToUpper().Contains(newQuery, StringComparison.OrdinalIgnoreCase) ||
+                    n.Priority.ToUpper().Contains(newQuery, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
                      break;
              }
         }
 
-        // .Where(n => 
-        // n.DisasterType.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-        // n.Description.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-        // n.Priority.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
-        // .ToList();
+        
     }
 
     private async void ClearFilter()
