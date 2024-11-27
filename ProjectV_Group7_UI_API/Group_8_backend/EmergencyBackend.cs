@@ -45,7 +45,6 @@ namespace EmergencyServices.Group8
             return ret.Result.Model; // We need to return this since it has the correct creation time info AND the correct ID
         }
 
-        [ExcludeFromCodeCoverage]
         public static async Task<List<ProcessedDisaster>> GetAllProcessedDisastersAsync()
         {
             try
@@ -65,7 +64,6 @@ namespace EmergencyServices.Group8
             }
         }
 
-        [ExcludeFromCodeCoverage]
         public static async Task<List<ProcessedDisaster>> GetDisastersByPriorityAsync(DisasterTypeEnums priorityLevel)
         {
             try
@@ -89,7 +87,6 @@ namespace EmergencyServices.Group8
             }
         }
 
-        [ExcludeFromCodeCoverage]
         public static async Task<bool> MarkDisasterAsCriticalAsync(int disasterId)
         {
             try

@@ -16,16 +16,16 @@ namespace EmergencyServices.Group8 // Created as part of ticket 105, for use in 
         public DateTime Timestamp { get; set; } = DateTime.Now;
 
         [Column("disaster_type")]
-        public string DisasterType { get; set; }
+        public string? DisasterType { get; set; }
 
         [Column("precaution_steps")]
-        public string PrecautionSteps { get; set; }
+        public string? PrecautionSteps { get; set; }
 
         [Column("during_disaster_steps")]
-        public string DuringDisasterSteps { get; set; }
+        public string? DuringDisasterSteps { get; set; }
 
         [Column("recovery_steps")]
-        public string RecoverySteps { get; set; }
+        public string? RecoverySteps { get; set; }
 
         [ExcludeFromCodeCoverage]
         public override string ToString()

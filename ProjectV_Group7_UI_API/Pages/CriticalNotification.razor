@@ -1,5 +1,7 @@
 @page "/critical-notification-history"
-@inject CriticalNotificationService CriticalNotificationService
+@* @attribute [StreamRendering] *@
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+@using EmergencyServices.Group8;
 
 <h2 style="display: inline-block;">Critical Notification History</h2>
 <button class="btn-new-notification" @onclick="ShowAddNotificationModal" style="float: right; margin-left: 20px;">New
@@ -12,13 +14,21 @@
 
 <p class="notification-description">View a history of all notifications.</p>
 
-<table>
+@if (filteredNotifications == null)
+{
+    <p>
+        <em>Loading ...</em>
+    </p>
+}
+else
+{
+    <table>
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Recipient</th>
-            <th>Type</th>
-            <th>Status</th>
+            <th>Timestamp</th>
+            <th>Source</th>
+            <th>DisasterType</th>
+            <th>Description</th>
             <th>Priority</th>
         </tr>
     </thead>
@@ -26,10 +36,10 @@
         @foreach (var notification in filteredNotifications)
         {
             <tr>
-                <td>@notification.Date.ToString("MMM d")</td>
-                <td>@notification.Recipient</td>
-                <td>@notification.Type</td>
-                <td>@notification.Status</td>
+                <td>@notification.Timestamp.ToString("MMM d")</td>
+                <td>@notification.Source</td>
+                <td>@notification.DisasterType</td>
+                <td>@notification.Description</td>
                 <td>@notification.Priority</td>
             </tr>
         }
@@ -37,28 +47,29 @@
 </table>
 
 <AddNotificationModal @ref="addNotificationModal" OnClose="HandleModalClose" />
-
-<!-- Filter Modal -->
-<div class="filter-modal" style="display: @(isFilterVisible ? "block" : "none");">
-    <div class="modal-content">
-        <h4>Filter Notifications</h4>
-        <input type="text" @bind="searchQuery" placeholder="Search....." />
-        <div class="modal-actions">
-            <button @onclick="ApplyFilter" class="btn-apply-filter">Apply Filter</button>
-            <button @onclick="ClearFilter" class="btn-clear-filter">Clear Filter</button>
+    <!-- Filter Modal -->
+    <div class="filter-modal" style="display: @(isFilterVisible ? "block" : "none");">
+        <div class="modal-content">
+            <h4>Filter Notifications</h4>
+            <input type="text" @bind="searchQuery" placeholder="Search....." />
+            <div class="modal-actions">
+                <button @onclick="ApplyFilter" class="btn-apply-filter">Apply Filter</button>
+                <button @onclick="ClearFilter" class="btn-clear-filter">Clear Filter</button>
+            </div>
         </div>
     </div>
-</div>
+}
 
 @code {
     private string searchQuery = string.Empty;
-    private List<Critical_Notification> filteredNotifications = new();
+    private List<ProcessedDisaster>? filteredNotifications;
     private AddNotificationModal addNotificationModal;
     private bool isFilterVisible = false;
 
-    protected override void OnInitialized()
+
+    protected override async Task OnInitializedAsync()
     {
-        filteredNotifications = CriticalNotificationService.GetNotifications();
+        filteredNotifications = await EmergencyBackend.GetAllProcessedDisastersAsync();
     }
 
     private void ShowAddNotificationModal()
@@ -66,9 +77,9 @@
         addNotificationModal.Show();
     }
 
-    private void HandleModalClose()
+    private async Task HandleModalClose()
     {
-        filteredNotifications = CriticalNotificationService.GetNotifications();
+        filteredNotifications = await EmergencyBackend.GetAllProcessedDisastersAsync();
     }
 
     private void ShowFilterOptions()
@@ -76,26 +87,44 @@
         isFilterVisible = !isFilterVisible;
     }
 
-    private void ApplyFilter()
+    private async Task ApplyFilter()
     {
         if (string.IsNullOrEmpty(searchQuery))
         {
-            filteredNotifications = CriticalNotificationService.GetNotifications();
+            filteredNotifications = await EmergencyBackend.GetAllProcessedDisastersAsync();
         }
-        else
-        {
-            filteredNotifications = CriticalNotificationService.GetNotifications()
-            .Where(n => n.Recipient.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-            n.Type.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-            n.Status.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-            n.Priority.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
-            .ToList();
-        }
+        // else // CURRENTLY BREAKING PROJECT
+        // {
+        //     string newQuery = searchQuery;
+        //     switch (newQuery)
+        //     {
+        //         case "WATCH":
+        //             filteredNotifications = await EmergencyBackend.GetDisastersByPriorityAsync(DisasterTypeEnums.Watch);
+        //             break;
+        //         case "WARNING":
+        //             filteredNotifications = await EmergencyBackend.GetDisastersByPriorityAsync(DisasterTypeEnums.Warning);
+        //             break;
+        //         case "URGENT":
+        //             filteredNotifications = await EmergencyBackend.GetDisastersByPriorityAsync(DisasterTypeEnums.Urgent);
+        //             break;
+        //         case "CRITICAL:
+        //             filteredNotifications = await EmergencyBackend.GetDisastersByPriorityAsync(DisasterTypeEnums.Critical);
+        //             break;
+        //         default:
+        //             filteredNotifications = await EmergencyBackend.GetAllProcessedDisastersAsync();
+        //             break;
+        //     }
+        // }
+            // .Where(n => 
+            // n.DisasterType.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            // n.Description.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+            // n.Priority.Contains(searchQuery, StringComparison.OrdinalIgnoreCase))
+            // .ToList();
     }
 
-    private void ClearFilter()
+    private async void ClearFilter()
     {
         searchQuery = string.Empty;
-        filteredNotifications = CriticalNotificationService.GetNotifications();
+        filteredNotifications = await EmergencyBackend.GetAllProcessedDisastersAsync();
     }
 }
